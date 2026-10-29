@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive weather dashboard using asynchronous JavaScript and a public weather API.">
+  <title>SkyCast | Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-icon">☼</span> SkyCast</a>
+      <span class="live-label"><i></i> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">WEATHER AT A GLANCE</p>
+      <h1>Find your <span>forecast.</span></h1>
+      <p>Current conditions and a simple five-day outlook for your city.</p>
+    </section>
+
+    <form id="search-form" class="search-form">
+      <label class="sr-only" for="city-input">Search city</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="city-input" type="search" placeholder="Enter a city (e.g. Chennai)" value="Chennai" autocomplete="off" required>
+      <button id="search-button" type="submit">Search weather</button>
+    </form>
+
+    <p id="message" class="message" role="status" aria-live="polite">Loading weather…</p>
+
+    <section id="current-weather" class="current-card" aria-label="Current weather" hidden>
+      <div class="current-main">
+        <div>
+          <p class="location-label">CURRENT CONDITIONS</p>
+          <h2 id="location-name">—</h2>
+          <p id="current-date" class="muted">—</p>
+          <p id="condition" class="condition">—</p>
+        </div>
+        <div class="temperature"><span id="weather-icon">☀</span><strong id="temperature">—</strong><span class="unit">°C</span></div>
+      </div>
+      <div class="metrics">
+        <div><span>FEELS LIKE</span><strong id="feels-like">—</strong></div>
+        <div><span>HUMIDITY</span><strong id="humidity">—</strong></div>
+        <div><span>WIND SPEED</span><strong id="wind-speed">—</strong></div>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-title"><div><p class="eyebrow">PLAN AHEAD</p><h2>5-day forecast</h2></div><span class="small-note">Daily outlook</span></div>
+      <div id="forecast-grid" class="forecast-grid" aria-live="polite"></div>
+    </section>
+
+    <footer><span>SkyCast · Built with HTML, CSS & async JavaScript</span><span>Weather data: Open-Meteo</span></footer>
+  </main>
+</body>
+</html>
